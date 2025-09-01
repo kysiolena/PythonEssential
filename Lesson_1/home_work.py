@@ -8,16 +8,16 @@
 class Book:
     def __init__(self, author: str, name: str, year_of_publication: int, genre: str, reviews: list['Review']):
         self.author = author
-        self.name = name
+        self._name = name
         self.year_of_publication = year_of_publication
         self.genre = genre
         self.reviews = reviews
 
     def __repr__(self):
-        return f'__repr__() Book(author={self.author}, name={self.name}, year_of_publication={self.year_of_publication}, genre={self.genre}, reviews={self.reviews})'
+        return f'__repr__() Book(author={self.author}, name={self._name}, year_of_publication={self.year_of_publication}, genre={self.genre}, reviews={self.reviews})'
 
     def __str__(self):
-        return f'__str__() Book(author={self.author}, name={self.name}, year_of_publication={self.year_of_publication}, genre={self.genre}, reviews={self.show_reviews()})'
+        return f'__str__() Book(author={self.author}, name={self._name}, year_of_publication={self.year_of_publication}, genre={self.genre}, reviews={self.show_reviews()})'
 
     def show_reviews(self):
         return list(map(lambda r: str(r), self.reviews))
@@ -60,18 +60,30 @@ book_2 = Book('Elizabeth Gilbert', 'Eat Pray Love', 2006, 'Memoirs, Biography, A
 
 class Car:
     def __init__(self, model: str):
-        self.model = model
+        self.__model = model
 
-    def get_model(self):
-        return self.model
+    @property
+    def model(self):
+        return self.__model
+
+    @model.setter
+    def model(self, value: str):
+        if not len(value):
+            raise ValueError("Model cannot be empty string.")
+
+        self.__model = value
+
+    @model.deleter
+    def model(self):
+        del self.__model
 
 class CarShowroom:
     def __init__(self, name: str, cars: list['Car']):
-        self.name = name
+        self._name = name
         self.cars = cars
 
     def info(self):
-        return f'There are {self.get_cars_count()} cars in car showroom «{self.name}»: {self.get_cars_list()}'
+        return f'There are {self.get_cars_count()} cars in car showroom «{self._name}»: {self.get_cars_list()}'
 
     def sell(self, car: 'Car'):
         car_index = self.cars.index(car)
@@ -83,7 +95,7 @@ class CarShowroom:
 
         self.sell(car)
 
-        print(f'The car «{car.get_model()}» was sold from «{self.name}»')
+        print(f'The car «{car.model}» was sold from «{self._name}»')
 
         print(self.info())
 
@@ -98,6 +110,17 @@ car_2 = Car('Lucid Air')
 car_3 = Car('Chevrolet Corvette')
 car_4 = Car('Honda Accord')
 car_5 = Car('Mercedes-Benz E450')
+
+# print(car_4.model)
+#
+# car_4.model = 'Hello Test'
+#
+# print(car_4.model)
+#
+# del car_4.model
+#
+# print(car_4.model)
+
 
 car_showroom_1 = CarShowroom('First', [car_1, car_3, car_5])
 car_showroom_2 = CarShowroom('Second', [car_2, car_4, car_1, car_3, car_5])
