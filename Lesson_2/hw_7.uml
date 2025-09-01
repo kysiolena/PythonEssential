@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>Python</ID>
+  <OriginalElement>#D:/GitHub_kysiolena/_python/PythonEssential/Lesson_2/home_work_7.py</OriginalElement>
+  <nodes>
+    <node x="242.5" y="346.0">Lesson_2.home_work_7.NoFuelVehicle</node>
+    <node x="-166.5" y="346.0">Lesson_2.home_work_7.FuelVehicle</node>
+    <node x="9.5" y="226.0">Lesson_2.home_work_7.Vehicle</node>
+    <node x="-115.5" y="526.0">Lesson_2.home_work_7.Car</node>
+    <node x="191.0" y="526.0">Lesson_2.home_work_7.Bicycle</node>
+    <node x="70.0" y="-14.0">typing.Hashable</node>
+    <node x="108.0" y="106.0">object</node>
+    <node x="26.5" y="466.0">Lesson_2.home_work_7.Airplane</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="object" target="typing.Hashable" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="Lesson_2.home_work_7.Airplane" target="Lesson_2.home_work_7.FuelVehicle" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="169.0" y="320.0" />
+      <point x="-11.0" y="320.0" />
+      <point x="0.0" y="-14.0" />
+    </edge>
+    <edge source="Lesson_2.home_work_7.Bicycle" target="Lesson_2.home_work_7.NoFuelVehicle" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="329.0" y="440.0" />
+      <point x="209.0" y="440.0" />
+      <point x="209.0" y="320.0" />
+      <point x="409.0" y="320.0" />
+      <point x="0.0" y="-14.0" />
+    </edge>
+    <edge source="Lesson_2.home_work_7.FuelVehicle" target="Lesson_2.home_work_7.Vehicle" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="-11.0" y="200.0" />
+      <point x="149.0" y="200.0" />
+      <point x="0.0" y="-14.0" />
+    </edge>
+    <edge source="Lesson_2.home_work_7.Car" target="Lesson_2.home_work_7.FuelVehicle" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="9.0" y="440.0" />
+      <point x="169.0" y="440.0" />
+      <point x="169.0" y="320.0" />
+      <point x="-11.0" y="320.0" />
+      <point x="0.0" y="-14.0" />
+    </edge>
+    <edge source="Lesson_2.home_work_7.Vehicle" target="object" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="Lesson_2.home_work_7.NoFuelVehicle" target="Lesson_2.home_work_7.Vehicle" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="409.0" y="300.0" />
+      <point x="-11.0" y="300.0" />
+      <point x="-11.0" y="200.0" />
+      <point x="149.0" y="200.0" />
+      <point x="0.0" y="-14.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.7925170068027211" showDependencies="false" x="204.5" y="270.0" />
+  <SelectedNodes />
+  <Categories />
+</Diagram>
+
