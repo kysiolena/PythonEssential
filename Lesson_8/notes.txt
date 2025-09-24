@@ -1,0 +1,3 @@
+Hello Monday!|monday
+Hello Tuesday!|tuesday
+Hello Wednesday!|wednesday
